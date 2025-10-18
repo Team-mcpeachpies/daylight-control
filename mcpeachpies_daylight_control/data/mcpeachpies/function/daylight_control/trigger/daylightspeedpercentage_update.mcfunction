@@ -2,6 +2,7 @@ scoreboard players operation daylightSpeedPercentage mpp_daylight_count = @s day
 
 scoreboard players operation tick_target mpp_daylight_count = value_2000 mpp_daylight_count 
 scoreboard players operation tick_target mpp_daylight_count /= daylightSpeedPercentage mpp_daylight_count
+scoreboard players set tick_rate mpp_daylight_count 20
 execute if score @s daylightSpeedPercentage matches 0 run scoreboard players set tick_target mpp_daylight_count -1
 
 tellraw @s ["",{"text":"Custom Gamerule daylightSpeedPercentage is now set to: "},{"score":{"name":"@s","objective":"daylightSpeedPercentage"}}]
